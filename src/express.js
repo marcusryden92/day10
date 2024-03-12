@@ -17,10 +17,9 @@ const handleGet = (db) => {
   res.json(req.boy);
 };
 
-export function setupRouting(app, db) {
+function setupRouting(app, db) {
   app.use(bodyParser.json());
   app.use(logger);
-  app.use(dbWrapper);
 
   app.post("/todo", handlePost);
   app.get("/todo", handleGet);
